@@ -18,7 +18,7 @@ function App() {
     setLoginFormData((prevData)=>({...prevData,[e.target.name]: e.target.value}));
   }
 
-  const url ="http://localhost:3000/service/";
+  const url ="http://3.212.142.51/service/";
 
   const handleSubmit = async () => {
     try {
@@ -34,13 +34,12 @@ function App() {
     }
   };
 
-  const socket = io("http://localhost:5000");
+  const socket = io("http://52.203.193.217");
 
   useEffect(() => {
     socket.on("receiveEstacion", (event) => {
       console.log(event,"holaaaa");
       setEstaciones(event);
-
     });
   }, []);
 
